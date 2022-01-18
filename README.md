@@ -35,7 +35,7 @@ Las funciones pueden recibir argumentos en forma de parámetros, y retornar dato
 - Un retorno en una función supone detener su ejecución.
 - Las _arrow function_ carentes de bloque disponen de retorno por defecto.
 
-A efecto del alcance de variables:
+## Main points: variable scope
 - Las variables declaradas dentro de un bloque o función se denominan **locales** o **privadas**, accesibles únicamente dentro de ese contexto.
 - Las variables declaradas fuera de cualquier bloque o función se denominan **globales** o **públicas**, accesibles desde cualquier parte del script.
 
