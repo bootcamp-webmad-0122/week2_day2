@@ -44,7 +44,7 @@ Las funciones pueden recibir argumentos en forma de parámetros, y retornar dato
 
 - Javascript es un lenguaje <strong>de subproceso único</strong> (<a href="https://en.wikipedia.org/wiki/Thread_(computing)#Single_threading">single-threaded</a>), por lo que no puede performar múltiples tareas a la vez.
 - Asimismo es <strong>síncrono</strong>, dado que las tareas se ejecutan una detrás de otra siguiendo la secuencia del programa, donde tareas de alto coste en términos de tiempo generan cuellos de botella naturales en el flujo de la misma.
-- En base a esta naturaleza, dispone de diversos recursos de carácter asíncrono que permiten gestionar tareas programadas y/o paralelas.
+- En base a esta naturaleza, dispone de diversos recursos de carácter asíncrono que permiten gestionar tareas programadas y/o paralelas. Entre ellos, encontramos métodos no bloqueantes como `.setTimeout()` o `.setInterval()`.
 
 ## Main points: callbacks
 
