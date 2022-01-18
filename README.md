@@ -30,11 +30,11 @@ A nivel de estructura, existen:
   ````javascript
   const getTotals = (subtotal, tax) => subtotal + tax
   ````
-Las funciones pueden recibir argumentos en forma de parámetros, y retornar datos. A efectos del retorno:
-- Sólo pueden retornar un único valor, o `undefined` si carecen de retorno.
-- Un retorno en una función supone detener su ejecución.
-- Las _arrow function_ carentes de bloque disponen de retorno por defecto.
-
+Las funciones pueden recibir argumentos en forma de parámetros, y retornar datos. Es posible implementar como último parámetro el operador de propagación para crear un array con los parámetros restantes (REST PARAMETERS):
+  ````javascript
+  const getInvoiceTotal = (tax, ...products) => tax + products.reduce((acc, product) => acc + produc.price, 0)
+  ````
+  
 ## Main points: variable scope
 - Las variables declaradas dentro de un bloque o función se denominan **locales** o **privadas**, accesibles únicamente dentro de ese contexto.
 - Las variables declaradas fuera de cualquier bloque o función se denominan **globales** o **públicas**, accesibles desde cualquier parte del script.
