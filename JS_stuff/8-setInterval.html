@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>El intervalo con ID <span>XXX</span> se ha cumplido <span>0</span> veces</h1>
+    <button>DETENER INTERVALO</button>
+    <script>
+
+        let counter = 0, intervalId
+
+        // .setInterval() has two arguments: callback and timing
+        // Returns an interval ID
+        // .clearInterval() uses an interval ID as argument to stop it
+
+        intervalId = setInterval(() => {
+            counter++
+            document.querySelector('h1 span:nth-child(1)').textContent = intervalId
+            document.querySelector('h1 span:nth-child(2)').textContent = counter
+        }, 1000)
+
+        document.querySelector('button').onclick = () => {
+            clearInterval(intervalId)
+        }
+
+    </script>
+</body>
+
+</html>

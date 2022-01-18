@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Function statement (nominal)
+        function sayHi1() {
+            console.log('HOLA!')
+        }
+
+        sayHi1()
+
+
+        // Function expression (nominal)
+        const sayHi2 = function () {
+            console.log('HOLA DE NUEVO!')
+        }
+
+        sayHi2()
+
+
+        // Arrow function (nominal)
+        const sayHi3 = () => {
+            console.log('HOLA DE NUEVO X2')
+        }
+
+        sayHi3()
+
+
+        // Anonymous function
+        const numbers = [1, 2, 3]
+        numbers.forEach(function (eachNumber) {
+            console.log('Soy una función anónima y el valor iterado es', eachNumber)
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Global context: window
+        const globalContext = this
+        console.log('Contexto global: ', globalContext)
+        console.log(globalContext === window)
+
+
+
+        // Function context: window
+        function whatever() {
+            console.log('Contexto de función: ', this)
+        }
+        whatever()
+
+
+        // Method context: parent object
+        const doggy = {
+            name: 'Popino',
+            sayHi() {
+                alert(this.name + ' ha dicho hola')
+            }
+        }
+
+        doggy.sayHi()
+
+
+
+
+
+        console.log('-----')
+
+
+
+        const person = {
+            name: 'German',
+            weight: 80,
+            walk0() {
+                this.weight -= .1
+                console.log('Ahora me llamo', this.name, 'y peso', this.weight, 'gramos')
+            },
+            walk1() {
+                setInterval(function () {               // NOPE! function context is window...
+                    this.weight -= .1
+                    console.log('Ahora me llamo', this.name, 'y peso', this.weight, 'gramos')
+                }, 1000)
+            },
+            walk2() {                                   // NOPE! guarrada máxima
+                const that = this
+                setInterval(function () {
+                    that.weight -= .1
+                    console.log('Ahora me llamo', this.name, 'y peso', this.weight, 'gramos')
+                }, 1000)
+            },
+            walk3() {                                   // OK! .bind() re-orients a function's context :D
+                setInterval(function () {
+                    this.weight -= .1
+                    console.log('Ahora me llamo', this.name, 'y peso', this.weight, 'gramos')
+                }.bind(this), 1000)
+            },
+            walk4() {                                   // OK! context does not detect arrow functions
+                setInterval(() => {
+                    this.weight -= .1
+                    console.log('Ahora me llamo', this.name, 'y peso', this.weight, 'gramos')
+                }, 1000)
+            }
+        }
+
+
+
+        // person.walk0()
+        // person.walk1()
+        // person.walk2()
+        // person.walk3()
+        person.walk4()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

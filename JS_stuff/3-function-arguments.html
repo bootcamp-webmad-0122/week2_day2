@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // // arguments array: does not differenciate bewteen arguments and does not have methods
+        // function getMovieInfo() {
+        //     let text = ''
+        //     text += `La película ${arguments[0]} fue dirigida por ${arguments[1]}.<br>`
+        //     text += `Los actores fueron:<br>`
+        //     for (let i = 2; i < arguments.length; i++) {
+        //         text += `${arguments[i]}.<br>`
+        //     }
+        //     return text
+        // }
+
+        // const movieDetails = getMovieInfo('Titanic', 'Cameron', 'Leo', 'Kate Winslet', 'La señora mayor de la joya')
+        // document.write(movieDetails)
+
+
+
+
+        // REST parameters: creates a functional array with the spread operator
+        function getMovieInfo(title, director, ...cast) {
+            let text = ''
+            text += `La película ${title} fue dirigida por ${director}.<br>`
+            text += `Los actores fueron:<br>`
+            cast.forEach(actor => text += `${actor} <br>`)
+            return text
+        }
+
+        const movieDetails = getMovieInfo('Titanic', 'Cameron', 'Leo', 'Kate Winslet', 'La señora mayor de la joya', 'La de los chistes')
+        document.write(movieDetails)
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Global scope
+        let text1 = 'Soy global y estoy disponible en cualquier sitio'
+
+        const myFn = () => {
+            // Block scope
+            let text2 = 'Yo soy privada y sólo estoy accesible dentro de mi bloque'
+            console.log(text1)
+            console.log(text2)
+        }
+
+        myFn()
+        // console.log(text2)      // Exception!
+
+
+
+
+
+        // Variable shadowing
+        let name = 'German'
+
+        function saiHy() {
+            let name = 'Popino'
+            console.log('Dentro de la función me llamo', name)
+        }
+
+        console.log('Fuera de la función me llamo', name)
+
+        saiHy()
+
+    </script>
+</body>
+
+</html>

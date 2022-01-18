@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Object desructuring
+        let person = {
+            name: 'Ironhacker',
+            age: 25,
+            favoriteMusic: 'Metal',
+            address: {
+                street: 'Super Cool St',
+                number: 123,
+                city: 'Miami',
+            }
+        }
+
+        const { name, age, favoriteMusic, celiac, address } = person
+
+        console.log(`Hello, ${name}.`)
+        console.log(`You are ${age} years old.`)
+        console.log(`Your favorite music is ${favoriteMusic}.`)
+        console.log(`Your street is ${address.street}`)
+
+
+
+        // Default values
+        // const { name, age, favoriteMusic, celiac = false } = person
+
+
+        // Custom variable names
+        // const { name, age, favoriteMusic: musicGenre } = person
+
+
+
+
+    </script>
+</body>
+
+</html>
